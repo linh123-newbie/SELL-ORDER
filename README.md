@@ -8,13 +8,14 @@ Mã nguồn ABAP báo cáo đơn hàng bán bằng ALV.
 
 ## Thành phần SAP cần có
 
-- Bảng `YTB_HANG`, `YTB_DONH`, `YTB_DOND` và bảng chuẩn `KNA1`.
-- Cấu trúc `YST_LINH3_MATERIAL`, `YST_LINH4_MATERIAL`.
+- Bảng `YTB_HANG`, `YTB_DONH`, `YTB_DOND` và bảng chuẩn `KNA1`, `T001`.
+- Cấu trúc `YST_LINH3_MATERIAL`, `YST_LINH4_MATERIAL`, `YST_LINH4_MATERIAL_IO`, `ZCORE_ST_PARAMETER`; kiểu `ZTTIEN`.
+- Smart Form `YSF_LINH3_DONHANG` để in đơn hàng.
 - Screen `2000`, `3000`; custom control `CONTAINER`, `CONTAINER3`.
 - GUI status `TOOLBAR2000`, `TOOLBAR3000`; title `TITLE2000`, `TITLE3000`.
 
 Định nghĩa DDIC, screen layout/flow logic, GUI status, title và text elements chưa được xuất. Repository là bản lưu mã nguồn, chưa phải gói abapGit hoàn chỉnh.
 
-## Lưu ý khi chạy
+## Cập nhật ngày 20/10/2026
 
-Mã nguồn gốc `YPG_LINH3` có lệnh xóa các đơn hàng với DHID cố định trong `YTB_DONH` tại `START-OF-SELECTION`, sau đó `COMMIT WORK`. Cần xem xét đoạn này trước khi chạy. Bản xuất giữ nguyên mã nguồn SAP; việc xuất không thực thi chương trình.
+Đồng bộ mã nguồn active từ SAP: bổ sung in một đơn hàng được chọn bằng Smart Form, cập nhật DHID khi sửa đơn hàng và loại bỏ lệnh xóa đơn hàng cố định tại START-OF-SELECTION. Bản xuất giữ nguyên mã nguồn SAP; việc xuất không thực thi chương trình.
